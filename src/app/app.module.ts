@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MdToolbarModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { MovieService } from './movie.service';
+
 
 @NgModule({
   declarations: [
@@ -11,9 +14,10 @@ import { MdToolbarModule } from '@angular/material';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdToolbarModule
+    MdToolbarModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
