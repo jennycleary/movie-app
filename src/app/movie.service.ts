@@ -7,7 +7,6 @@ import { Observable } from 'rxjs/Observable';
 export class MovieService {
     foo: string = "Hello Movie Fans!";
     
-    
   constructor( public http: Http ) { }
   
     getMovieData() {
