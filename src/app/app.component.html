@@ -3,8 +3,32 @@
   {{title}}
 </md-toolbar>
 
-<md-card 
-    *ngFor="let movie of movieData">
-     {{ movie.title }} <br>
-     Score: {{ movie.average_vote }}
-     </md-card> 
+<div id="main-grid">
+    
+    <div id="left-col"> Your SCORE Movies
+        <div *ngFor="let movie of favoriteMovies">
+             {{ movie.title }}
+        </div>
+    </div>
+    
+    <div id="center-col">Trending SCORE Movies
+        <md-card class="movie-card"
+            *ngFor="let mockmovie of movieData">
+            {{ mockmovie.title }} <br>
+            Score: {{ mockmovie.average_vote }}
+        </md-card> 
+    </div>
+    
+    <div id="right-col">Search SCORE Movies
+        <md-form-field class="search-field">
+            <input [(ngModel)]="userMovie" mdInput
+                placeholder="Movie Title"
+                (keyup.enter)="movieSearch()"> 
+        </md-form-field>
+        <div *ngFor="let movie of searchResult"
+            (click)="addFavMovie(movie)">
+            {{ movie.title }} <br>
+            Score: {{movie.vote_average }}
+        </div>
+    </div>
+</div>

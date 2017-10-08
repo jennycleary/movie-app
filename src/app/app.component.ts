@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieService } from './movie.service';
+import { MoviesService } from './movies.service';
 
 const mockData = [
     {
@@ -27,18 +27,21 @@ const mockData = [
 export class AppComponent {
   title: string = 'SCORE Movies!';
   movieData = mockData;
-  movie: string = "";
+  userMovie: string = "";
   searchResult: any;
-
+  favoriteMovies: any = [];
   
-  constructor( public movie$: MovieService) {
-    this.movie$.getMovieData()
+  constructor(public movies$: MoviesService) {}
+    movieSearch() {
+      this.movies$.getMovieData(this.userMovie)
         .subscribe(
           data => {
-            this.searchResult = data
+            this.searchResult = data.results
             console.log("searchResult", this.searchResult)
-          }
-        )
-    console.log(this.movie$.foo)
-  }
+          })
+    }
+    
+  addFavMovie( movie){
+    this.favoriteMovies.push(movie)
+  }  
 }

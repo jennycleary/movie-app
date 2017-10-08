@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { MdToolbarModule,
          MdCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
-import { MovieService } from './movie.service';
+import { FormsModule,
+         NgModel,
+         ReactiveFormsModule } from '@angular/forms';
+import { MoviesService } from './movies.service';
+
 
 
 @NgModule({
@@ -17,9 +22,11 @@ import { MovieService } from './movie.service';
     BrowserAnimationsModule,
     MdToolbarModule,
     MdCardModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [MovieService],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
