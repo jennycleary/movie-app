@@ -6,29 +6,34 @@
 <div id="main-grid">
     
     <div id="left-col"> Your SCORE Movies
-        <div *ngFor="let movie of favoriteMovies">
-             {{ movie.title }}
-        </div>
+        <md-card class="movie-card"
+        *ngFor="let movie of favMovies"
+        (click)="removeFavMovie(movie)">
+             {{ movie.title }} <br>
+             SCORE: {{ movie.vote_average }}
+        </md-card>
     </div>
     
     <div id="center-col">Trending SCORE Movies
         <md-card class="movie-card"
             *ngFor="let mockmovie of movieData">
             {{ mockmovie.title }} <br>
-            Score: {{ mockmovie.average_vote }}
+            SCORE: {{ mockmovie.vote_average }}
         </md-card> 
     </div>
     
     <div id="right-col">Search SCORE Movies
+        <br>
         <md-form-field class="search-field">
-            <input [(ngModel)]="userMovie" mdInput
+            <input [(ngModel)]="userMovieSearch" mdInput
                 placeholder="Movie Title"
                 (keyup.enter)="movieSearch()"> 
         </md-form-field>
-        <div *ngFor="let movie of searchResult"
+        <md-card class="movie-card" 
+            *ngFor="let movie of searchResult"
             (click)="addFavMovie(movie)">
             {{ movie.title }} <br>
-            Score: {{movie.vote_average }}
-        </div>
+            SCORE: {{movie.vote_average }}
+        </md-card>
     </div>
 </div>

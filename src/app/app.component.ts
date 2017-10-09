@@ -4,17 +4,17 @@ import { MoviesService } from './movies.service';
 const mockData = [
     {
     "title": "Fight Club",
-    "average_vote": 8.3,
+    "vote_average": 8.3,
     "id": 550
     },
     {
     "title": "Avatar",
-    "average_vote": 7.2,
+    "vote_average": 7.2,
     "id": 19995  
     },
     {
     "title": "Inception",
-    "average_vote": 8.1,
+    "vote_average": 8.1,
     "id": 27205
     }
   ]
@@ -27,13 +27,13 @@ const mockData = [
 export class AppComponent {
   title: string = 'SCORE Movies!';
   movieData = mockData;
-  userMovie: string = "";
+  userMovieSearch: string = "";
   searchResult: any;
-  favoriteMovies: any = [];
+  favMovies: any = [];
   
   constructor(public movies$: MoviesService) {}
     movieSearch() {
-      this.movies$.getMovieData(this.userMovie)
+      this.movies$.getMovieData(this.userMovieSearch)
         .subscribe(
           data => {
             this.searchResult = data.results
@@ -41,7 +41,10 @@ export class AppComponent {
           })
     }
     
-  addFavMovie( movie){
-    this.favoriteMovies.push(movie)
+    addFavMovie( movie){
+      this.favMovies.push(movie)
   }  
+    removeFavMovie(index){
+      this.favMovies.splice(index, 1);
+  }
 }

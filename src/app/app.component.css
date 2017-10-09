@@ -1,19 +1,20 @@
 #main-grid {
+    color: white;
+    background-color: white;
     margin: 0 auto;
     height: 100%;
     max-width: 800px;
     width: 100vw;
     display: grid;
       /* autoprefixer: off */
-    grid-template-columns: 2%  22% 40% 30% 2%;
+    grid-template-columns: 2% 40% 25% 40% 2%;
     grid-gap: 10px;
     grid-template-rows: 20px repeat( 5, 20% );
     grid-gap: 15px;
 }
 
 #left-col{
-    color: black;
-    background-color: #f8f8f8;
+    background-color: red;
     padding: 5px;
     /* autoprefixer: off */
     grid-column: 2;
@@ -24,11 +25,11 @@
     /* autoprefixer: off */
     grid-column: 3;
     grid-row: 2/ 5;
-    background: green;
+    background: red;
 }
 
 #right-col{
-    background-color: #f8a852;
+    background-color: red;
     padding: 5px;
     grid-column: 4;
     grid-row: 2 / 5;
