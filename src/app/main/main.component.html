@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<md-toolbar color="primary">
+  {{title}}
+</md-toolbar>
+
+<div id="main-grid">
+    
+    <div id="left-col"> Your SCORE Movies
+        <md-card class="movie-card"
+        *ngFor="let movie of favMovies"
+        (click)="removeFavMovie(movie)">
+             {{ movie.title }} <br>
+             SCORE: {{ movie.vote_average }}
+        </md-card>
+    </div>
+    
+    <div id="center-col">Trending SCORE Movies
+        <md-card class="movie-card"
+            *ngFor="let mockmovie of movieData">
+            {{ mockmovie.title }} <br>
+            SCORE: {{ mockmovie.vote_average }}
+        </md-card> 
+    </div>
+    
+    <div id="right-col">Search SCORE Movies
+        <br>
+        <md-form-field class="search-field">
+            <input [(ngModel)]="userMovieSearch" mdInput
+                placeholder="Movie Title"
+                (keyup.enter)="movieSearch()"> 
+        </md-form-field>
+        <md-card class="movie-card" 
+            *ngFor="let movie of searchResult"
+            (click)="addFavMovie(movie)">
+            {{ movie.title }} <br>
+            SCORE: {{movie.vote_average }}
+        </md-card>
+    </div>
+</div>

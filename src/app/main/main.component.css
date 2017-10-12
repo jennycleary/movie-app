@@ -1,0 +1,40 @@
+#main-grid {
+    color: white;
+    background-color: white;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 800px;
+    width: 100vw;
+    display: grid;
+      /* autoprefixer: off */
+    grid-template-columns: 2% 40% 25% 40% 2%;
+    grid-gap: 10px;
+    grid-template-rows: 20px repeat( 5, 20% );
+    grid-gap: 15px;
+}
+
+#left-col{
+    background-color: red;
+    padding: 5px;
+    /* autoprefixer: off */
+    grid-column: 2;
+    grid-row: 2 / 5;
+}
+
+#center-col{
+    /* autoprefixer: off */
+    grid-column: 3;
+    grid-row: 2/ 5;
+    background: red;
+}
+
+#right-col{
+    background-color: red;
+    padding: 5px;
+    grid-column: 4;
+    grid-row: 2 / 5;
+}
+
+.movie-card {
+    margin: 20px auto;
+}
