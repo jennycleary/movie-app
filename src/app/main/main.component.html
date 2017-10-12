@@ -1,8 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<md-toolbar color="primary">
-  {{title}}
-</md-toolbar>
-
 <div id="main-grid">
     
     <div id="left-col"> Your SCORE Movies
@@ -30,10 +25,11 @@
                 (keyup.enter)="movieSearch()"> 
         </md-form-field>
         <md-card class="movie-card" 
-            *ngFor="let movie of searchResult"
-            (click)="addFavMovie(movie)">
+            *ngFor="let movie of searchResult">
             {{ movie.title }} <br>
             SCORE: {{movie.vote_average }}
+            <i class="material-icons" 
+            (click)="addFavMovie(movie)">favorite</i>
         </md-card>
     </div>
 </div>
