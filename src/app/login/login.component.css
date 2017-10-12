@@ -1,10 +1,21 @@
 
 
-.example-container > * {
-  width: 100%;
-}
+
 .center{
     display: block;
     width: 130px;
     margin: 10px auto;
+}
+.container-form {
+  display: flex;
+ 
+  width: 500px;
+  background-color: #596f79;
+  align-items: center;
+
+  border-radius: 5px;
+  padding: 20px;
+}
+.mat-form-field {
+  margin-right: 20px;
 }

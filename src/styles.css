@@ -18,13 +18,3 @@ i {
 /* Custom  Class to apply to our forms and apply the below styles
 display flex and flex direciont makes our elements within this class stack vertical, hence column.  align-items: center = centers the child elents in the container. Having one class for both forms lets us apply one change and it will be applied to both forms
 */
-.container-form {
-  display: flex;
-  flex-direction: column; 
-  width: 500px;
-  background-color: #596f79;
-  align-items: center;
-  margin: 20vh auto 0 auto;
-  border-radius: 5px;
-  padding: 20px;
-}

@@ -1,12 +1,15 @@
-.container {
+
+
+.example-container > * {
+  width: 100%;
+}
+.container-form {
   display: flex;
   flex-direction: column; 
   width: 500px;
   background-color: #596f79;
   align-items: center;
-  margin: 10 auto;
-}
-
-.example-container > * {
-  width: 100%;
+  margin: 20vh auto 0 auto;
+  border-radius: 5px;
+  padding: 20px;
 }
