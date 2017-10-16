@@ -1,11 +1,25 @@
+<md-card class="search-card">
+    <!--search icon-->
+    <i class="material-icons search">search</i>
+        <md-form-field class="search-field">
+            <input [(ngModel)]="userMovieSearch" mdInput
+            placeholder="Enter Movie Title"
+            (keyup.enter)="movieSearch()">
+        </md-form-field>
+</md-card>
+        
 <div id="main-grid">
     
     <div id="left-col"> Your SCORE Movies
         <md-card class="movie-card"
-        *ngFor="let movie of favMovies"
-        (click)="removeFavMovie(movie)">
+        *ngFor="let movie of favMovies; let i = index"> 
+        <!--let i = index is for removeFavMovie(i)-->
+        
              {{ movie.title }} <br>
              SCORE: {{ movie.vote_average }}
+             <!--add remove icon from favorites list-->
+            <i class="material-icons fav" 
+            (click)="removeFavMovie(i)">remove_circle</i>
         </md-card>
     </div>
     
@@ -19,16 +33,16 @@
     
     <div id="right-col">Search SCORE Movies
         <br>
-        <md-form-field class="search-field">
-            <input [(ngModel)]="userMovieSearch" mdInput
-                placeholder="Movie Title"
-                (keyup.enter)="movieSearch()"> 
-        </md-form-field>
+        <md-card class="movie-card"
+            *ngIf="this.searchNotFound">
+            {{ this.searchNotFound }}
+        </md-card>
         <md-card class="movie-card" 
             *ngFor="let movie of searchResult">
             {{ movie.title }} <br>
             SCORE: {{movie.vote_average }}
-            <i class="material-icons" 
+            <!--add heart icon too add to favorites list-->
+            <i class="material-icons fav" 
             (click)="addFavMovie(movie)">favorite</i>
         </md-card>
     </div>

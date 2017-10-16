@@ -14,7 +14,7 @@
 }
 
 #left-col{
-    background-color: red;
+    background-color: #f44336;
     padding: 5px;
     /* autoprefixer: off */
     grid-column: 2;
@@ -25,11 +25,11 @@
     /* autoprefixer: off */
     grid-column: 3;
     grid-row: 2/ 5;
-    background: red;
+    background: #f44336;
 }
 
 #right-col{
-    background-color: red;
+    background-color: #f44336;
     padding: 5px;
     grid-column: 4;
     grid-row: 2 / 5;
@@ -37,4 +37,12 @@
 
 .movie-card {
     margin: 20px auto;
+}
+
+.fav {
+    margin: 0 25px;
+}
+
+.search-card { 
+   text-align: center;
 }

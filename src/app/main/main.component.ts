@@ -31,14 +31,21 @@ export class MainComponent implements OnInit {
   userMovieSearch: string = "";
   searchResult: any;
   favMovies: any = [];
+  searchNotFound: string;
   
   constructor(public movies$: MoviesService) {}
     movieSearch() {
+      this.searchNotFound = ''; //this makes it so the movie error card goes away with a new search. sets it blank again.
       this.movies$.getMovieData(this.userMovieSearch)
         .subscribe(
           data => {
             this.searchResult = data.results
             console.log("searchResult", this.searchResult)
+            //if array is 0, then give text movie not found error 
+            if (this.searchResult.length === 0){
+              this.searchNotFound = "Movie Not Found"
+              console.log ("Movie Not Found")
+            }
           })
     }
     
