@@ -1,6 +1,7 @@
 import { Component,
           OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
+import { MoviesdbService } from '../moviesdb.service';
 
 const mockData = [
     {
@@ -33,7 +34,10 @@ export class MainComponent implements OnInit {
   favMovies: any = [];
   searchNotFound: string;
   
-  constructor(public movies$: MoviesService) {}
+  constructor(public movies$: MoviesService, public moviesdb$: MoviesdbService) {}
+  //can add multiple services to the constructor. seperated by a comma
+  ngOnInit(){}
+  //life cycle built
     movieSearch() {
       this.searchNotFound = ''; //this makes it so the movie error card goes away with a new search. sets it blank again.
       this.movies$.getMovieData(this.userMovieSearch)
@@ -49,12 +53,23 @@ export class MainComponent implements OnInit {
           })
     }
     
-    addFavMovie( movie){
-      this.favMovies.push(movie)
+      addFavMovie( movie){
+        let savedMovie: any ={};
+        //create new variable to save data (savedMovie)
+        savedMovie.title = movie.title;
+        //savedMovie needs to match the property in the backend = movie needs to match property from api
+        savedMovie.score = movie.vote_average;
+        //savedMovie needs to match the property in the backend (which I named score) = movie needs to match property from api (vote_average)
+        console.log("saved movie", savedMovie)
+        this.moviesdb$.postMovieData(savedMovie)
+        //this data will be saved to the moviesdb service using the savedMovie
+          .subscribe(
+            data => {
+              this.favMovies.push(savedMovie)
+          })  
+      }
   
-  }  
-    removeFavMovie(index){
-      this.favMovies.splice(index, 1);
+  removeFavMovie(index){
+    this.favMovies.splice(index, 1);
   }
-  ngOnInit(){}
 }

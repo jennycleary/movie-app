@@ -15,6 +15,7 @@ import { FormsModule,
          ReactiveFormsModule } from '@angular/forms';
 import { MoviesService } from './movies.service';
 import { UserService } from './user.service';
+import { MoviesdbService } from './moviesdb.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
@@ -63,7 +64,7 @@ import { RouterModule }   from '@angular/router';
 
  ])],
  
-  providers: [MoviesService, UserService, {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'auto'}}],  
+  providers: [MoviesService, MoviesdbService, UserService, {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'auto'}}],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
