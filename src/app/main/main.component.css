@@ -35,6 +35,12 @@
     grid-row: 2 / 5;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto; 
+    /*max-width: 300px; this makes it smaller*/
+}
+
 .movie-card {
     margin: 20px auto;
 }
