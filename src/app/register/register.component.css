@@ -1,14 +1,21 @@
-
-
-.example-container > * {
-  width: 100%;
+img {
+    width: 100%;
+    height: auto;
 }
+div.logo {
+    margin: 0 auto; 
+    width: 300px; 
+    height: auto;
+    
+    /*max-width this makes it smaller*/
+}
+
 .container-form {
   display: flex;
-  flex-direction: column; 
-  width: 100%;
+  width: 200px;
   height: 100%;
-  background-color: #596f79;
+  flex-wrap: nowrap;
+  background-color: #f44336;
   /*background: url(../../assets/score-logo.png) no-repeat;*/
   align-items: center;
   margin: 0 auto;

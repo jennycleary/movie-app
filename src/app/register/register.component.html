@@ -5,12 +5,14 @@
   -->
   <i  routerLink="/" class="material-icons" >arrow_back</i>
 
+<div class="logo">
 
-<div>
+    <img src="../../assets/score-logo.png">
 
+</div>
 
-
-   <form class="container-form" #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
+<div class="container-form">
+   <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
      
       <md-form-field>
         <input placeholder= "Email" name="email" [(ngModel)]="user.email" type="email" mdInput required>

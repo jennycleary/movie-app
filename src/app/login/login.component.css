@@ -1,18 +1,36 @@
+.logo {
+    display: block;
+    margin: 0 auto; 
+    max-width: 400px; 
+    /*max-width this makes it smaller*/
+}
+
 .center{
     display: block;
-    width: 130px;
-    margin: 10px auto;
+    margin: 0 auto;
+    text-align: right;
 }
+/*.container-form {*/
+/*  display: flex;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  background-color: #f44336;*/
+/*  align-items: center;*/
+/*  margin: 0 auto;*/
+/*  border-radius: 5px;*/
+/*  padding: 20px;*/
+/*}*/
+
+
 .container-form {
   display: flex;
- 
-  width: 500px;
-  background-color: #596f79;
+  flex-direction: column; 
+  width: 100%;
+  height: 100%;
+  background-color: #f44336;
+  /*background: url(../../assets/score-logo.png) no-repeat;*/
   align-items: center;
-
+  margin: 0 auto;
   border-radius: 5px;
   padding: 20px;
-}
-.mat-form-field {
-  margin-right: 20px;
 }

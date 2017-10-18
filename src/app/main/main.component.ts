@@ -2,24 +2,7 @@ import { Component,
           OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { MoviesdbService } from '../moviesdb.service';
-
-const mockData = [
-    {
-    "title": "Fight Club",
-    "vote_average": 8.3,
-    "id": 550
-    },
-    {
-    "title": "Avatar",
-    "vote_average": 7.2,
-    "id": 19995  
-    },
-    {
-    "title": "Inception",
-    "vote_average": 8.1,
-    "id": 27205
-    }
-  ]
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-main',
@@ -28,15 +11,33 @@ const mockData = [
 })
 export class MainComponent implements OnInit {
   title: string = 'SCORE Movies!';
-  movieData = mockData;
   userMovieSearch: string = "";
   searchResult: any;
   favMovies: any = [];
   searchNotFound: string;
-  
-  constructor(public movies$: MoviesService, public moviesdb$: MoviesdbService) {}
+  userData: any;
   //can add multiple services to the constructor. seperated by a comma
-  ngOnInit(){}
+  constructor( 
+    public movies$: MoviesService, 
+    public moviesdb$: MoviesdbService,
+    public user$: UserService
+    ) {}
+  
+  /*After the constructor function builds the instance of the component
+  ngOnInit will run in other words onInitialization do this...
+  
+  */
+  ngOnInit(){ 
+    if (this.user$.userData){
+    /* 
+    In this case if the property userData on the user$, ( the user.service.ts) 
+    is truethen assign it to a property called userData on the 
+    main.component.ts. This will be our related data for that use who logged in.
+    */
+      this.userData = this.user$.userData;
+    }
+    
+  }
   //life cycle built
     movieSearch() {
       this.searchNotFound = ''; //this makes it so the movie error card goes away with a new search. sets it blank again.

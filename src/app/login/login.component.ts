@@ -13,9 +13,7 @@ export class LoginComponent implements OnInit {
   //returnUrl is a variable to set the route upon successful response from our server, See line 53 of this file
   returnUrl: string = "main"  
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
  signupForm(){
   
@@ -37,37 +35,7 @@ export class LoginComponent implements OnInit {
      Whenever the html is updated from user input that data is sent to the component.ts and visa versa.
     */
     this.user$.login( this.user )
-    //Because we always subscribe to our http calls.
-      .subscribe(
-        res => {
-          console.log(res)
-         /*  
-         Anything we want to do upon a successful response from the server goes inside this first 
-         functions {}. Our response from the server invclude a few things, a token and an id. 
-         Save our res.token in our local storage and id this is usefull so we
-         can use the token and id for http requests that require the id of the user to 
-         retrieve specific information about the user. The token is for authentication, 
-         granting us access and denying http requests that do not have a token. 
-         To view your local storage in chrome  dev tools go to application tab and then select local
-         storage. You should see these items in there.
-        */
-        window.localStorage.setItem( "token", res.id)
-        window.localStorage.setItem( "id", res.userId)
-       
-        /*This line will navigate us to a different view using the router, remember router-link is replaced 
-        with the components html on our app.html. To see routes and their related components view the 
-        app.module and the router module below. To see what the variable this.returnUrl see line 13 above 
-        */
-        this.router.navigate([this.returnUrl])
-          
-          },
-        /*arrow function below to handle the case of an error from our server*/
-        error => {
-          /*  what do on error code goes in here. A pop up, alert anything
-          to communicate to the user that something went wrong.
-          */
-          console.log(error)
-        alert("Something Went Wrong Please try again")}
-    )}
+       //subscribe is now in the service.
+     }
  
 }
