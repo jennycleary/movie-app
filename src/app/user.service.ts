@@ -44,7 +44,9 @@ for example     https://<studentname>-fall-2017-phortonssf.c9users.io:8080/api/A
         .map( res => res.json())
         //res is response. 200 is a good response
         .subscribe(
+            //subscribe is a property method function
             res => {
+            //this is the first of the 3 possible responses. The successful response.
                  console.log("login res",res)
                  /*  
                  Anything we want to do upon a successful response from the server goes inside this first 
@@ -57,6 +59,7 @@ for example     https://<studentname>-fall-2017-phortonssf.c9users.io:8080/api/A
                  storage. You should see these items in there.
                 */
                 this.userData = res.userData;
+                //res.userData is a property of res. 
                 console.log("userData", this.userData)
                 window.localStorage.setItem( "token", res.id)
                 window.localStorage.setItem( "id", res.userId)

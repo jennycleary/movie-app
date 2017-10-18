@@ -5,6 +5,7 @@ import { MoviesdbService } from '../moviesdb.service';
 import { UserService } from '../user.service';
 
 @Component({
+  //<app-main></app-main>
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
