@@ -1,18 +1,14 @@
 <header>
 
-    <ul class="navbar">
-        <li>
-            <a routerLink="main">Main</a>
-        </li>
-        <li>
-            <a routerLink="register">Register</a>
-        </li>
-    </ul>   
-    
+    <p class="greeting"> Welcome {{ userData.firstName }}! 
+    <br>
+    SCORE Movie Fan
+    </p>
+
 </header>
 
 <img class="logo" src="../../assets/score-logo.png">
-
+ 
 <md-card class="search-card">
     <!--search icon-->
     <i class="material-icons search">search</i>
@@ -26,10 +22,19 @@
 <div id="main-grid">
     
     <div id="left-col"> Your SCORE Movies
+    
+        <md-card class="movie-card"
+        *ngFor="let movie of userData.movies; let i = index">
+            {{ movie.title }} 
+            <br>
+            {{ movie.score }}
+            <i class="material-icons fav" 
+            (click)="removeFavMovie(i)">remove_circle</i>
+        </md-card>
+        
         <md-card class="movie-card"
         *ngFor="let movie of favMovies; let i = index"> 
         <!--let i = index is for removeFavMovie(i)-->
-        
              {{ movie.title }} <br>
              SCORE: {{ movie.vote_average }}
              <!--add remove icon from favorites list-->

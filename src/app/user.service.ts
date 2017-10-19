@@ -46,6 +46,8 @@ for example     https://<studentname>-fall-2017-phortonssf.c9users.io:8080/api/A
         .subscribe(
             //subscribe is a property method function
             res => {
+                
+               
             //this is the first of the 3 possible responses. The successful response.
                  console.log("login res",res)
                  /*  
@@ -62,7 +64,7 @@ for example     https://<studentname>-fall-2017-phortonssf.c9users.io:8080/api/A
                 //res.userData is a property of res. 
                 console.log("userData", this.userData)
                 window.localStorage.setItem( "token", res.id)
-                window.localStorage.setItem( "id", res.userId)
+                window.localStorage.setItem( "userId", res.userId)
                
                 /*This line will navigate us to a different view using the router, remember router-link is replaced 
                 with the components html on our app.html. To see routes and their related components view the 

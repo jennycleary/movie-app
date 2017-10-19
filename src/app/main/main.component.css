@@ -22,7 +22,7 @@
 }
 
 #center-col{
-    /* autoprefixer: off */
+     autoprefixer: off; 
     grid-column: 3;
     grid-row: 2/ 5;
     background: #f44336;
@@ -35,19 +35,30 @@
     grid-row: 2 / 5;
 }
 
-.navbar {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    list-style-type: none;
-    display: inline;
+.greeting {
+    font-weight: bold;
+    font-size: larger;
+    color: #f44336;
     text-align: right;
 }
+
+/*.navbar {*/
+/*    margin-left: 0;*/
+/*    margin-right: 0;*/
+/*    padding: 0;*/
+/*    list-style-type: none;*/
+/*    display: inline;*/
+/*    text-align: right;*/
+/*    color: #f44336;*/
+/*    font-weight: bold;*/
+
+/*}*/
 
 .logo {
     display: block;
     margin: 0 auto; 
-    /*max-width: 300px; this makes it smaller*/
+    max-width: 400px; 
+    /*max-width this makes it smaller*/
 }
 
 .movie-card {

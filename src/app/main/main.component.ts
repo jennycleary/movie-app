@@ -22,13 +22,14 @@ export class MainComponent implements OnInit {
     public movies$: MoviesService, 
     public moviesdb$: MoviesdbService,
     public user$: UserService
-    ) {}
+    ) { }
   
   /*After the constructor function builds the instance of the component
   ngOnInit will run in other words onInitialization do this...
   
   */
   ngOnInit(){ 
+   
     if (this.user$.userData){
     /* 
     In this case if the property userData on the user$, ( the user.service.ts) 
@@ -36,6 +37,7 @@ export class MainComponent implements OnInit {
     main.component.ts. This will be our related data for that use who logged in.
     */
       this.userData = this.user$.userData;
+      console.log("testing userData", this.userData);
     }
     
   }
