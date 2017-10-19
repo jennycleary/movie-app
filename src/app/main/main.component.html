@@ -1,8 +1,8 @@
 <header>
 
-    <p class="greeting"> Welcome {{ userData.firstName }}! 
+    <p class="greeting"> Welcome {{ userData.firstName }} :)
     <br>
-    SCORE Movie Fan
+    SCORE Movies Fan! 
     </p>
 
 </header>
@@ -43,13 +43,13 @@
         </md-card>
     </div>
     
-    <div id="center-col">Trending SCORE Movies
-        <md-card class="movie-card"
-            *ngFor="let mockmovie of movieData">
-            {{ mockmovie.title }} <br>
-            SCORE: {{ mockmovie.vote_average }}
-        </md-card> 
-    </div>
+    <!--<div id="center-col">Trending SCORE Movies-->
+    <!--    <md-card class="movie-card"-->
+    <!--        *ngFor="let mockmovie of movieData">-->
+    <!--        {{ mockmovie.title }} <br>-->
+    <!--        SCORE: {{ mockmovie.vote_average }}-->
+    <!--    </md-card> -->
+    <!--</div>-->
     
     <div id="right-col">Search SCORE Movies
         <br>
@@ -57,13 +57,18 @@
             *ngIf="this.searchNotFound">
             {{ this.searchNotFound }}
         </md-card>
+        
+        <div class="image-container">
         <md-card class="movie-card" 
             *ngFor="let movie of searchResult">
+            <img md-card-image src='http://image.tmdb.org/t/p/w185//{{ movie.poster_path }}' alt="Poster"> <br>
             {{ movie.title }} <br>
+            {{ movie.overview }} <br>
             SCORE: {{movie.vote_average }}
             <!--add heart icon too add to favorites list-->
             <i class="material-icons fav" 
             (click)="addFavMovie(movie)">favorite</i>
         </md-card>
+        </div>
     </div>
 </div>
