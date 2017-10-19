@@ -3,7 +3,7 @@
     background-color: white;
     margin: 0 auto;
     height: 100%;
-    width: 100vw;
+    width: 95vw;
     display: grid;
       /* autoprefixer: off */
     grid-template-columns:  20% 80%;
@@ -22,14 +22,8 @@
     /*grid-row: 2 / 5;*/
 }
 
-/*#center-col{*/
-/*     autoprefixer: off; */
-/*    grid-column: 3;*/
-/*    grid-row: 2/ 5;*/
-/*    background: #f44336;*/
-/*}*/
-
-#right-col{
+#search-col{
+    
     background-color: #f44336;
     padding: 25px;
     /*grid-column: 4;*/

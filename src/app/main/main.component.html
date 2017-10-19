@@ -21,7 +21,7 @@
       
 <div id="main-grid">
     
-    <div id="left-col"> Your SCORE Movies
+    <div id="left-col"> {{ userData.firstName }} SCORE Movies
     
         <md-card class="movie-card"
         *ngFor="let movie of userData.movies; let i = index">
@@ -43,25 +43,17 @@
         </md-card>
     </div>
     
-    <!--<div id="center-col">Trending SCORE Movies-->
-    <!--    <md-card class="movie-card"-->
-    <!--        *ngFor="let mockmovie of movieData">-->
-    <!--        {{ mockmovie.title }} <br>-->
-    <!--        SCORE: {{ mockmovie.vote_average }}-->
-    <!--    </md-card> -->
-    <!--</div>-->
-    
-    <div id="right-col">Search SCORE Movies
+    <div id="search-col">
         <br>
         <md-card class="movie-card"
-            *ngIf="this.searchNotFound">
-            {{ this.searchNotFound }}
+            *ngIf="searchNotFound">
+            {{ searchNotFound }}
         </md-card>
         
         <div class="image-container">
         <md-card class="movie-card" 
-            *ngFor="let movie of searchResult">
-            <img md-card-image src='http://image.tmdb.org/t/p/w185//{{ movie.poster_path }}' alt="Poster"> <br>
+        *ngFor="let movie of searchResult">
+            <img md-card-image src='http://image.tmdb.org/t/p/w185//{{ movie.poster_path }}' alt="Photo Not Found"> <br>
             {{ movie.title }} <br>
             {{ movie.overview }} <br>
             SCORE: {{movie.vote_average }}

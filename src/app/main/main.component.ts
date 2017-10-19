@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   searchResult: any;
   favMovies: any = [];
   searchNotFound: string;
+  photoNotFound: string ="Photo not found."
   userData: any;
   //can add multiple services to the constructor. seperated by a comma
   constructor( 
@@ -37,7 +38,7 @@ export class MainComponent implements OnInit {
     main.component.ts. This will be our related data for that use who logged in.
     */
       this.userData = this.user$.userData;
-      console.log("testing userData", this.userData);
+      console.log("testing userData", this.userData)
     }
     
   }
