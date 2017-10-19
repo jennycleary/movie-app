@@ -27,7 +27,7 @@
         *ngFor="let movie of userData.movies; let i = index">
             {{ movie.title }} 
             <br>
-            {{ movie.score }}
+            SCORE: {{ movie.score }}
             <i class="material-icons fav" 
             (click)="removeFavMovie(i)">remove_circle</i>
         </md-card>
@@ -36,7 +36,7 @@
         *ngFor="let movie of favMovies; let i = index"> 
         <!--let i = index is for removeFavMovie(i)-->
              {{ movie.title }} <br>
-             SCORE: {{ movie.vote_average }}
+             SCORE: {{ movie.score }}
              <!--add remove icon from favorites list-->
             <i class="material-icons fav" 
             (click)="removeFavMovie(i)">remove_circle</i>
